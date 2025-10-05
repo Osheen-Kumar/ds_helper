@@ -23,7 +23,7 @@ setup(
     long_description=long_description, 
     long_description_content_type='text/markdown',
     
-    url='https://github.com/YourUsername/ds_helper_library',
+    url='https://github.com/Osheen-Kumar/ds_helper',
     packages=find_packages(),
     
     # --- 3. Pass the *clean* dependency list to install_requires ---

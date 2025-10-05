@@ -1,7 +1,7 @@
 ds_helper
 A powerful, reusable Python library designed to automate common data science workflows, including initial data inspection, text cleaning, and automatic data visualization. Built as a part of [Your Course Name] Project 4.
 
-🛠️ Installation
+Installation
 Prerequisites: Ensure you have Python 3.8+ installed.
 
 Clone the Repository:
@@ -13,7 +13,7 @@ Install the Library: Run the setup file from the root directory.
 
 pip install .
 
-🚀 Usage Examples
+Usage Examples
 Once installed, all key functions are available directly under the ds_helper namespace.
 
 1. Text Cleaning (text_cleaner)
@@ -64,7 +64,7 @@ import ds_helper
 # This will generate plots (e.g., histogram for Age, bar chart for City)
 ds_helper.create_visualizations(df, types_map)
 
-⚙️ Dependencies
+Dependencies
 This library requires the following:
 
 pandas
