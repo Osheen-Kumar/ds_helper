@@ -78,6 +78,3 @@ def plot_correlation_heatmap(df, numerical_cols, ax):
     ax.set_title("Correlation Heatmap")
     print("-> Plotting correlation heatmap for numerical columns.")
 
-df=pd.read_csv(r"C:\Users\Osheen kumar\Downloads\Titanic-Dataset.csv")
-
-auto_visualize(df)

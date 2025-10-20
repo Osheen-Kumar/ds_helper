@@ -294,44 +294,4 @@ if __name__ == "__main__":
     df = pd.DataFrame(raw_data)
     text_to_clean = df['review_text']
 
-    # 2. Test Case 1: Standard Cleaning (Punctuation, Stopwords, Fillers, Lowercase)
-    print("\n[TEST 1: Standard Cleaning with No Lemmatization]")
-    cleaned_series_standard = clean_text(
-        text_to_clean,
-        lemmatize=False,
-        remove_fillers=True,
-        remove_stopwords=True
-    )
-    df['cleaned_standard'] = cleaned_series_standard
-    # Use to_string() for reliable output without extra dependencies
-    print(df[['review_text', 'cleaned_standard']].to_string(index=False))
-
-    # Expected transformation with the new isalpha() filter:
-    # - "The product is amazing; fast delivery and great quality. 9/10." -> '910' is removed!
-
-    # 3. Test Case 2: Advanced Cleaning (WITH Lemmatization) and Custom Stopwords
-    print("\n[TEST 2: Advanced Cleaning with Lemmatization and Custom Stopwords]")
-    custom_stops = ["movie", "product", "character", "delivery"]
-    cleaned_series_advanced = clean_text(
-        text_to_clean,
-        lemmatize=True,  # Enable lemmatization (e.g., 'enjoyed' -> 'enjoy', 'was' -> 'be')
-        remove_fillers=False, # Keep fillers for this test
-        custom_stopwords=custom_stops
-    )
-    df['cleaned_advanced'] = cleaned_series_advanced
-    # Use to_string() for reliable output without extra dependencies
-    print(df[['review_text', 'cleaned_advanced']].to_string(index=False))
-    
-    # Expected transformation with the new isalpha() filter and POS lemmatization:
-    # - 'was' -> 'be' (or now, simply removed)
-    # - '9/10' -> removed
-
-    # 4. Test Case 3: Word Frequency Analysis and Plotting (using Standard Cleaned Data)
-    print("\n[TEST 3: Word Frequency Analysis]")
-    freq_df = create_word_frequency(
-        df['cleaned_standard'],
-        top_n=10,
-        plot=True  # Will call _plot_word_frequency to display the chart
-    )
-
-    print("\nTest Complete.")
+   
