@@ -21,9 +21,15 @@ def auto_visualize(df, n):
     num_total_plots = num_individual_plots + (1 if numerical_cols else 0)
 
     # Create a figure and axes object with the correct number of subplots
+    # Create a figure and axes object with the correct number of subplots
     fig, axes = plt.subplots(ncols=num_total_plots, figsize=(num_total_plots * 5, 5))
-    ax_list = iter(axes)
 
+    # --- ADD THIS CHECK to handle the single-plot case ---
+    if num_total_plots == 1:
+        axes = [axes]  # Convert the single Axes object into a list containing that object
+
+    # Now, 'axes' is guaranteed to be iterable
+    ax_list = iter(axes)
     # Iterate through the columns and call the correct helper function
     for col_name, col_type in column_types.items():
         if col_name in df.columns:
