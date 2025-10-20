@@ -4,14 +4,14 @@ import seaborn as sns
 from .column_detector import detect_column_types
 import numpy as np
 
-def auto_visualize(df):
+def auto_visualize(df, n):
 
     # Get the column types from the helper function
     print("Analyzing data and selecting appropriate plots...")
     print("-" * 40)
 
     # Get the column types from the helper function
-    column_types = detect_column_types(df)
+    column_types = detect_column_types(df, n)
     
     # Calculate the number of plots needed
     num_individual_plots = len(column_types)
